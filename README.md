@@ -1,4 +1,4 @@
-Medical Report Summarizer & Q&A App
+## Medical Report Summarizer & Q&A App
 
 A Streamlit-based web application that automatically summarizes medical reports and answers questions from PDFs using LangChain, FAISS, HuggingFace embeddings, and Google Gemini AI.
 
@@ -6,7 +6,7 @@ A Streamlit-based web application that automatically summarizes medical reports 
 ![WhatsApp Image 2025-10-18 at 15 00 28_70fadd08](https://github.com/user-attachments/assets/925db09f-0df0-4e0f-82a7-f6ac186e97cc)
 ![WhatsApp Image 2025-10-18 at 15 00 46_84da75c1](https://github.com/user-attachments/assets/fc4c1fe8-c20c-4aa5-b647-cebf5fb3c3ea)
 
-Project Overview
+## Project Overview
 
 Medical reports are often long and complex, making it difficult for patients and doctors to quickly understand key information. This project provides:
 
@@ -18,7 +18,7 @@ Visual insights (like lab results, blood glucose trends, etc.) in a user-friendl
 
 The app extracts text from PDFs, chunks it for LLM processing, generates embeddings, and uses a FAISS vector database to retrieve relevant information efficiently. Answers are generated using Google Gemini AI through LangChain.
 
-Features
+## Features
 
 Upload multiple PDF medical reports.
 
@@ -32,7 +32,7 @@ Optional visualization of lab results and trends.
 
 Interactive Streamlit interface.
 
-Technologies Used
+## Technologies Used
 
 Streamlit – Web app interface.
 
@@ -49,7 +49,8 @@ Google Gemini AI – Context-aware question answering.
 Python – Backend programming.
 
 dotenv – Managing environment variables (API keys).
-Workflow
+
+## Workflow
 
 PDF Upload → User uploads PDF files.
 
