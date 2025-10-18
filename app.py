@@ -11,13 +11,10 @@ from dotenv import load_dotenv
 import google.generativeai as genai
 
 
-
-# Load API key
 load_dotenv()
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 
-#Extract text from PDFs 
 def get_pdf_text(pdf_docs):
     text = ""
     for pdf in pdf_docs:
@@ -36,18 +33,13 @@ def get_text_chunks(text):
     return chunks
 
 
-#Create and save FAISS vector store
 def get_vector_store(text_chunks):
-    # Using HuggingFace MiniLM for embeddings
     embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
     vector_store = FAISS.from_texts(text_chunks, embedding=embeddings)
     vector_store.save_local("faiss_index")
 
 
-#Conversational QA chain
 def get_conversational_chain():
-    
-
 
     prompt_template = """
     Answer the question as detailed as possible from the provided context.
@@ -76,7 +68,6 @@ def get_conversational_chain():
     return chain
 
 
-# Handle user input 
 def user_input(user_question):
     embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
     new_db = FAISS.load_local("faiss_index", embeddings, allow_dangerous_deserialization=True)
@@ -92,7 +83,6 @@ def user_input(user_question):
     st.write("Reply:", response["output_text"])
 
 
-#Streamlit App
 def main():
     st.set_page_config("Chat PDF")
     st.header("Medical-Report-Summarizer")
